@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,25 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Quantum theme colors
+				quantum: {
+					primary: '#0D47A1',
+					secondary: '#1976D2',
+					accent: '#03A9F4',
+					glow: '#00E5FF',
+					dark: '#102A43',
+					light: '#E3F2FD',
+					purple: '#6A1B9A',
+					violet: '#9C27B0',
+					success: '#00BFA5',
+					warning: '#FFC400',
+					error: '#D50000',
+				},
+			},
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+				mono: ['JetBrains Mono', 'monospace'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +103,41 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						opacity: '0.6',
+						boxShadow: '0 0 5px #00E5FF' 
+					},
+					'50%': { 
+						opacity: '1',
+						boxShadow: '0 0 15px #00E5FF, 0 0 30px rgba(0, 229, 255, 0.5)' 
+					},
+				},
+				'quantum-flow': {
+					'0%': {
+						backgroundPosition: '0% 50%',
+					},
+					'50%': {
+						backgroundPosition: '100% 50%',
+					},
+					'100%': {
+						backgroundPosition: '0% 50%',
+					},
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 3s infinite',
+				'quantum-flow': 'quantum-flow 5s ease infinite',
+			},
+			backgroundImage: {
+				'gradient-quantum': 'linear-gradient(-45deg, #0D47A1, #6A1B9A, #1976D2, #9C27B0)',
+			},
+			backgroundSize: {
+				'300%': '300% 300%',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
